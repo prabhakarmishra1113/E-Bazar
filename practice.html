@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".divy").animate({right: '250px'});
+  });
+
+});
+</script> 
+
+<style>
+  .divx{
+    
+    overflow-y: hidden;
+    
+    border: 1px solid red;
+  }
+  .divy{
+    position: relative;
+  }
+  .div1
+  {
+    background-color: aqua;
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  .div2
+  {
+    background-color: rgb(214, 145, 16);
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  .div3
+  {
+    background-color: rgb(102, 9, 66);
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  .div4
+  {
+    background-color: rgb(24, 29, 27);
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  .div5
+  {
+    background-color: rgb(51, 39, 211);
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  div{
+    float: left;
+    padding: 20px;
+    margin: 10px;
+  }
+  img{
+    height: 200px;
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or relative!</p>
+
+<section class="divx">
+ <div class="divy">
+  <div class="div1"><img src="public/images/men/m1.jpeg"></div>
+  <div class="div2"><img src="public/images/men/m2.jpeg"></div>
+  <div class="div3"><img src="public/images/men/m3.jpeg"></div>
+  <div class="div4"><img src="public/images/men/m4.jpeg"></div>
+  <div class="div5"><img src="public/images/men/m5.jpeg"></div>
+</div>
+</section>
+
+</body>
+</html>
