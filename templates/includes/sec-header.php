@@ -4,4 +4,3 @@
        <?php echo $title ?>
     </div>
 
-

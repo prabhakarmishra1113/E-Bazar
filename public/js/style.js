@@ -25,12 +25,3 @@ $(document).ready(function(){
     }
 })
 });
-
-$(document).ready(function(){
-    $(".next").click(function(){
-      $(".myd").animate({right: '250px'});
-    });
-    $(".prev").click(function(){
-        $(".myd").animate({left: '20px'});
-      });
-  });

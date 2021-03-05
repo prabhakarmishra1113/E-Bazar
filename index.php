@@ -63,10 +63,4 @@
 
 <?php $title="Trending Offers"; include "templates/includes/product_sec.php"?>
 
-
-<div style="height: 999px;">
-</div>
-
-
-
 <?php include "templates/includes/footer.php" ?>

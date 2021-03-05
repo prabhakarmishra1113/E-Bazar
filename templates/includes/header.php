@@ -15,13 +15,14 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900" rel="stylesheet">
   
     <link rel="stylesheet" href="public/sass/style.css">
+    <link rel="stylesheet" href="../../public/sass/style.css">
 
     <link rel="icon" type="image/png" href="public/images/logo.png"/>
 
     <!--JQUERY CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="owlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/owlCarousel/owl.carousel.min.css">
 
     <title>E-Bazar</title>
     <script> 

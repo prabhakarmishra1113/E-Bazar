@@ -6,9 +6,17 @@
 body{
     background:whitesmoke;
 }
+@media screen and (max-width: 576px){
+    .container-fluid{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .hide-on-small{
+        display: none !important;
+    }
+}
 header{
     padding: 15px;
-
     button{
        background-color: #000000;
        color: #ffffff !important;
@@ -166,7 +174,7 @@ header{
             color: #000000;
         }
         .card-text{
-            font-size: .9rem;
+            font-size: .7rem;
             font-weight: lighter;
             color: #10a85c;
         }
@@ -188,4 +196,19 @@ header{
             }
         }
     }  
+}
+.product-sec{
+    .card-body{
+        @media screen and (max-width: 576px){
+            .product-card{
+                height: 15rem;
+                width: 10rem;
+                overflow: hidden;
+                img{
+                  height: 8rem;
+                  width: 8rem;
+                }
+          }
+        }
+    }    
 }
