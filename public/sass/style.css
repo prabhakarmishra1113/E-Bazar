@@ -208,4 +208,48 @@ header .nav-link {
     width: 8rem;
   }
 }
+
+.product_page .filter .card .card-title {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product_page .filter ul {
+  margin-top: -15px;
+}
+
+.product_page .filter ul li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.product_page .filter a {
+  text-decoration: none;
+}
+
+.product_page .product_sec .card-header {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.product_page .product_sec .card-body .card {
+  border: none;
+}
+
+.product_page .product_sec .card-body .card .card-footer {
+  border: none;
+  background: none;
+}
+
+.product_page .product_sec .card-body .card .card-footer .title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.product_page .product_sec .card-body .card .card-footer a {
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

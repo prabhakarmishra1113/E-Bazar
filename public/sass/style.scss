@@ -212,3 +212,52 @@ header{
         }
     }    
 }
+
+.product_page{
+    .filter{
+       .card{
+           .card-title{
+               padding: 10px;
+               font-size: 18px;
+               font-weight: bold;
+           }
+       } 
+        ul{
+            margin-top: -15px;
+        }
+        ul li{
+            list-style-type: none;
+            padding: 10px; 
+        }
+        a{
+           text-decoration: none;
+       }
+    }
+    .product_sec{
+        .card-header{
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000000;
+        }
+        .card-body{   
+             .card{            
+                 border: none;            
+                 .card-footer{
+                     border: none;
+                     background: none;
+                     .title{
+                         color: #000000;
+                         font-weight: bold;
+                         font-size: 1rem;
+                     }
+                     a{
+                         text-decoration: none;
+                     }
+                 }
+             }       
+                
+        }
+        
+
+    }
+}
