@@ -1,6 +1,6 @@
 <?php include "../includes/header.php" ?>
 
-<?php include "../includes/navbar.php" ?>
+<?php $index="../../index.php"; include "../includes/navbar.php" ?>
 
 <!--Product Page Start-->  
  <div class="container-fluid product_page">

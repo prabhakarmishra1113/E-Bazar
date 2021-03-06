@@ -11,7 +11,7 @@
             </li>
 
             <li class="nav-item ">
-                <a class="navbar-brand ml-lg-3 ml-lg-4" href="#">E-Bazar</a>
+                <a class="navbar-brand ml-lg-3 ml-lg-4" href="<?php echo $index ?>">E-Bazar</a>
              </li>
          </ul>
     <!--Icon and Logo Section End-->
@@ -37,39 +37,11 @@
          </ul>
     <!--Search Bar Section End-->
     </header>
-  <!--  
-      <section class="sub-menu nav-scroller mb-2">
-        <ul class="nav d-flex justify-content-between bg-light text-dark">
-          <li class="nav-item">
-            <a class="nav-link" href="">Men <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Women <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Kids <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Mobiles <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Electronics <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Fruits & Vegetables <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Dairy & Bakery <i class="fa fa-chevron-down"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Grocery <i class="fa fa-chevron-down"></i></a>
-          </li>
-        </ul>
-    </section>
--->
  </div>
- <section class="container-fluid">
-<div class="nav-scroller py-1 mb-2">
+
+<!--Product Category Section Start--> 
+<section class="container-fluid">
+ <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 text-muted" href="#">Men <i class="fa fa-chevron-down"></i></a>
       <a class="p-2 text-muted" href="#">Women <i class="fa fa-chevron-down"></i></a>
@@ -82,4 +54,5 @@
     </nav>
   </div>
   </section>
-    <!--Header End-->
+  <!--Product Category Section End--> 
+<!--Header End-->

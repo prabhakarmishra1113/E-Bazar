@@ -1,7 +1,11 @@
+
+<!--Include Header Files-->
 <?php include "templates/includes/header.php" ?>
 
-<?php include "templates/includes/navbar.php" ?>
+<!--Include Top Navbar Files-->
+<?php $index="index.php"; include "templates/includes/navbar.php" ?>
 
+<!--Slider Section Start-->
 <section class="carousel-sec">
 <div class="container-fluid">
  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -27,14 +31,21 @@
  </div>
 </div>
 </section>
+<!--Slider Section End-->
 
+<!--Owl Carousel Section Start-->
 <section class="container-fluid owl mt-1">
   <div class="card">
-     <?php $title="Deals Of The Day"; include "templates/includes/sec-header.php" ?>
+     <div class="card-header">
+        <a href="#" class="float-right"><button class="btn btn-primary">View All</button></a>
+        Deals Of The Day
+     </div>
       <?php include "templates/includes/owlcarousel.php" ?>
   </div>
 </section>
+<!--Owl Carousel Section End-->
 
+<!--Banner Section Start-->
 <section class="banner mt-1">
    <div class="container-fluid">
      <div class="row">
@@ -54,13 +65,17 @@
      </div>
    </div>
 </section>
+<!--Banner Section End-->
 
-<?php $title="Fashion For Everyone"; include "templates/includes/product_sec.php"?>
+<!--Home Page Sections Or Category Start-->
+<?php $title="Fashion For Everyone"; include "templates/includes/home_sec.php"?>
 
-<?php $title="Best of Electronics"; include "templates/includes/product_sec.php"?>
+<?php $title="Best of Electronics"; include "templates/includes/home_sec.php"?>
 
-<?php $title="Furniture Bestsellers"; include "templates/includes/product_sec.php"?>
+<?php $title="Furniture Bestsellers"; include "templates/includes/home_sec.php"?>
 
-<?php $title="Trending Offers"; include "templates/includes/product_sec.php"?>
+<?php $title="Trending Offers"; include "templates/includes/home_sec.php"?>
+<!--Home Page Sections Or Category Start-->
 
+<!--Footer Include-->
 <?php include "templates/includes/footer.php" ?>
