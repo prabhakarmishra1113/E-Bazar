@@ -1,26 +1,26 @@
-<?php include "templates/includes/header.php" ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="public/images/men/m1.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item active">
-      <img src="public/images/men/m1.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item active">
-      <img src="public/images/men/m1.jpeg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+<body>
+ 
+<?php
 
-<?php include "templates/includes/footer.php" ?>
+include "src/db_con.php";
+
+$query="SELECT * FROM practice";
+$result=$con->prepare($query);
+$result->execute();
+$row=$result->fetch(PDO::FETCH_ASSOC);
+$img = $row['Images'];
+$img2 = explode(",",$img);
+?>
+
+<img src="public/images/men/<?php echo $img2[0];?>">
+
+</body>
+
+</html>
