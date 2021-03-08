@@ -3,7 +3,7 @@
 <?php include "templates/includes/header.php" ?>
 
 <!--Include Top Navbar Files-->
-<?php $index="index.php"; include "templates/includes/navbar.php" ?>
+<?php $path=""; include "templates/includes/navbar.php" ?>
 
 <!--Slider Section Start-->
 <section class="carousel-sec">
@@ -72,7 +72,7 @@
 
 <?php $title="Best of Electronics"; include "templates/includes/home_sec.php"?>
 
-<?php $title="Furniture Bestsellers"; include "templates/includes/home_sec.php"?>
+<?php $title="Man Dress"; include "templates/includes/home_sec.php"?>
 
 <?php $title="Trending Offers"; include "templates/includes/home_sec.php"?>
 <!--Home Page Sections Or Category Start-->

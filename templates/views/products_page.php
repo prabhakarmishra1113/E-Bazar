@@ -1,6 +1,8 @@
+<?php include "../../src/db_con.php" ?>
+
 <?php include "../includes/header.php" ?>
 
-<?php $index="../../index.php"; include "../includes/navbar.php" ?>
+<?php $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
 <!--Product Page Start-->  
  <div class="container-fluid product_page">
@@ -31,18 +33,23 @@
              <!--Product Card Start-->
              <div class="row">
              <?php
-               $i=0;
-               while($i<=10){
-               $i++;  
+              $category=$_REQUEST['cat'];
+              $query="SELECT * FROM products WHERE product_cat='$category' OR product_subcat='$category'";
+              $result=$con->prepare($query);
+              $result->execute();
+              while($row=$result->fetch(PDO::FETCH_ASSOC))
+                {
+                  $tempimg = $row['product_images'];
+                  $img = explode(",",$tempimg); 
              ?>
               <div class="col-6 col-md-4 col-lg-3">
                <div class="card">
-                 <a class="text-center" href="#"><img src="../../public/images/men/m1.jpeg" class="img-fluid"></a>
+                 <a class="text-center" href="product_detail.php"><img src="../../public/images/products/<?php echo $img[0]; ?>" class="img-fluid"></a>
                  <div class="card-footer">
                    <figcaption class="figure-caption brand">E-BAZAR</figcaption>
-                   <a href="#"><figcaption class="figure-caption title">Men Branded T-shirt</figcaption></a>
-                   <figcaption class="figure-caption color">blue,red,pink</figcaption>
-                   <figcaption class="figure-caption rs">₹629 <del>₹999</del> <span class="text-success">76% off</span></figcaption>
+                   <a href="product_detail.php"><figcaption class="figure-caption title text-truncate"><?php echo $row['product_name']; ?></figcaption></a>
+                   <figcaption class="figure-caption color text-truncate"><?php echo $row['product_color'] ?></figcaption>
+                   <figcaption class="figure-caption rs">₹<?php $x=$row['product_price'];$y=$row['product_discount']; $money=($x-($x*$y)/100); echo $money; ?> <del>₹<?php echo $row['product_price']; ?></del> <span class="text-success"><?php echo $row['product_discount']; ?>% off</span></figcaption>
                    <button class="btn btn-primary w-100 mt-1">Add To Card</button>
                  </div>
                </div>

@@ -1,6 +1,6 @@
 <?php
 
-  $Drive_Host_DataBaseName="mysql:host=localhost; dbname=test;";
+  $Drive_Host_DataBaseName="mysql:host=localhost; dbname=ebazar;";
   $user_name="root";
   $password="";
 

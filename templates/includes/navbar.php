@@ -11,7 +11,7 @@
             </li>
 
             <li class="nav-item ">
-                <a class="navbar-brand ml-lg-3 ml-lg-4" href="<?php echo $index ?>">E-Bazar</a>
+                <a class="navbar-brand ml-lg-3 ml-lg-4" href="<?php echo $path ?>">E-Bazar</a>
              </li>
          </ul>
     <!--Icon and Logo Section End-->
@@ -43,14 +43,14 @@
 <section class="container-fluid">
  <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 text-muted" href="#">Men <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Women <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Kids <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Mobiles <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Electronics <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Fruits & Vegetables <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Dairy & Bakery <i class="fa fa-chevron-down"></i></a>
-      <a class="p-2 text-muted" href="#">Grocery <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=man">Men <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=women">Women <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=kids">Kids <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=mobile">Mobiles <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=electronics">Electronics <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=fruites">Fruits & Vegetables <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=dairy">Dairy & Bakery <i class="fa fa-chevron-down"></i></a>
+      <a class="p-2 text-muted" href="<?php echo $path ?>templates/views/products_page.php?cat=grocery">Grocery <i class="fa fa-chevron-down"></i></a>
     </nav>
   </div>
   </section>

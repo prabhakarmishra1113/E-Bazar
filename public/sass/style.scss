@@ -241,7 +241,11 @@ header{
         }
         .card-body{   
              .card{            
-                 border: none;            
+                 border: none; 
+                 img{
+                     width: 15rem;
+                     height: 18rem;
+                 }           
                  .card-footer{
                      border: none;
                      background: none;

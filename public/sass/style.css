@@ -238,6 +238,11 @@ header .nav-link {
   border: none;
 }
 
+.product_page .product_sec .card-body .card img {
+  width: 15rem;
+  height: 18rem;
+}
+
 .product_page .product_sec .card-body .card .card-footer {
   border: none;
   background: none;
