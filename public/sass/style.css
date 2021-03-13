@@ -253,3 +253,23 @@ header .nav-link {
   text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
+    	        /* website footer start*/
+        #foot {
+        	line-height:2; margin-top:25px;
+        	font-family: 'oswald', san-serif;
+        	letter-spacing: 2px;
+        	font-weight: 500;
+        }
+
+        #foot .row ul{
+        	list-style-type: none;
+        }
+
+        #foot .row ul li h3,h5{
+        	color:#000;
+        }
+
+        #foot .row ul li a{
+        	color:white;
+        }
+        /* website footer end*/
