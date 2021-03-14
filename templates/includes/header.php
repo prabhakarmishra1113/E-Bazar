@@ -23,6 +23,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="public/owlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../public/owlCarousel/owl.carousel.min.css">
 
     <title>E-Bazar</title>
     <script> 

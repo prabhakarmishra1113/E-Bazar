@@ -6,7 +6,7 @@
   <div class="card">
      <div class="card-header">
        <a href="#" class="float-right"><button class="btn btn-primary">View All</button></a>
-       <?php echo $title ?>
+       <?php echo "<strong>".$title."</strong> "?>
      </div>
 <!--Main Card Body Start-->     
     <div class="card-body" >
@@ -44,8 +44,8 @@
           <div class="col-6 col-md-3 col-lg-2">
           <!--Product Card Start-->
             <div class="product-card card text-center myd">
-              <a href="templates/views/products_page.php?cat=<?php echo $row['product_cat']; ?>"><img src="public/images/products/<?php echo $img[0]; ?>" class="card-image-center"></a>
-              <a href="templates/views/products_page.php?cat=<?php echo $row['product_cat']; ?>">
+              <a href="templates/views/products_page.php?product_key=<?php echo $row['product_cat']; ?>"><img src="public/images/products/<?php echo $img[0]; ?>" class="card-image-center"></a>
+              <a href="templates/views/products_page.php?product_key=<?php echo $row['product_cat']; ?>">
                 <div class="card-body">
                  <h5 class="card-title text-truncate"><?php echo $row['product_name']; ?></h5>
                  <p class="card-text">With <?php echo $row['product_discount']; ?>% Discount</p>

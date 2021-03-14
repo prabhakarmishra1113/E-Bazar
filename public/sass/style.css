@@ -16,6 +16,9 @@ body {
   .hide-on-small {
     display: none !important;
   }
+  .show-on-small {
+    display: block !important;
+  }
 }
 
 header {
@@ -191,6 +194,21 @@ header .nav-link {
   height: 17rem;
 }
 
+@media screen and (max-width: 576px) {
+  .owl .item {
+    margin: -5px !important;
+  }
+  .owl .product-card {
+    width: 10rem !important;
+    text-align: left !important;
+    margin: 0;
+  }
+  .owl .product-card img {
+    height: 10rem !important;
+    width: 9rem !important;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .banner .card img {
     height: 250px !important;
@@ -256,5 +274,93 @@ header .nav-link {
 
 .product_page .product_sec .card-body .card .card-footer a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 576px) {
+  .product_page .product_sec .card-body .card img {
+    width: 15rem;
+    height: 12rem;
+  }
+  .product_page .product_sec .card-body .card button {
+    font-size: .7rem;
+  }
+  .product_page .product_sec .card-body .card .card-footer {
+    margin-left: -15px;
+  }
+}
+
+.product_details .card {
+  border: none;
+  background: none;
+}
+
+.product_details .card .small-img {
+  cursor: pointer;
+  height: 5rem !important;
+  width: 5rem !important;
+}
+
+.product_details .card .big-img {
+  height: 68vh;
+}
+
+.product_details .card .carousel {
+  background: none;
+}
+
+.product_details .card .carousel .carousel-inner {
+  background: none;
+  height: 400px !important;
+  width: 85vw;
+  text-align: center;
+}
+
+.product_details .card .carousel .carousel-item img {
+  height: 400px !important;
+  width: 85vw;
+}
+
+.product_details .card .btn-group button {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  .product_details .card .btn-group button {
+    font-size: .7rem;
+  }
+}
+
+.product_details .card .card-footer {
+  border: none;
+  background: none;
+}
+
+.product_details .product-details-part .product-title {
+  font-weight: bold;
+  color: #000000;
+}
+
+.product_details .product-details-part .product-price .main-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.product_details .product-details-part .product-price del {
+  font-size: 1.3rem;
+}
+
+.product_details .product-details-part .product-price .discount {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.product_details .product-details-part .product-color .circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  float: left;
 }
 /*# sourceMappingURL=style.css.map */

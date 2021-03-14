@@ -1,5 +1,5 @@
 <?php include "../../src/db_con.php" ?>
-
+<?php session_start(); ?>
 <?php include "../includes/header.php" ?>
 
 <?php $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
@@ -12,7 +12,7 @@
          <div class="card">
             <div class="card-header">Filter</div>
             <div class="card body">
-              <h5 class="card-title">Short By</h5>
+              <h6 class="card-title">Sort By</h6>
               <ul>
                 <a href="#"><li>Price low to high</li></a>
                 <a href="#"><li>Price high to low</li></a>
@@ -33,7 +33,7 @@
              <!--Product Card Start-->
              <div class="row">
              <?php
-              $category=$_REQUEST['cat'];
+              $category=$_REQUEST['product_key'];
               $query="SELECT * FROM products WHERE product_cat='$category' OR product_subcat='$category'";
               $result=$con->prepare($query);
               $result->execute();
@@ -44,16 +44,17 @@
              ?>
               <div class="col-6 col-md-4 col-lg-3">
                <div class="card">
-                 <a class="text-center" href="product_detail.php"><img src="../../public/images/products/<?php echo $img[0]; ?>" class="img-fluid"></a>
+                 <a class="text-center" href="product_detail.php?product_key=<?php echo $row['product_id']; ?>"><img src="../../public/images/products/<?php echo $img[0]; ?>" class="img-fluid"></a>
                  <div class="card-footer">
                    <figcaption class="figure-caption brand">E-BAZAR</figcaption>
-                   <a href="product_detail.php"><figcaption class="figure-caption title text-truncate"><?php echo $row['product_name']; ?></figcaption></a>
+                   <a href="product_detail.php?product_key=<?php echo $row['product_id']; ?>"><figcaption class="figure-caption title text-truncate"><?php echo $row['product_name']; ?></figcaption></a>
                    <figcaption class="figure-caption color text-truncate"><?php echo $row['product_color'] ?></figcaption>
                    <figcaption class="figure-caption rs">₹<?php $x=$row['product_price'];$y=$row['product_discount']; $money=($x-($x*$y)/100); echo $money; ?> <del>₹<?php echo $row['product_price']; ?></del> <span class="text-success"><?php echo $row['product_discount']; ?>% off</span></figcaption>
                    <button class="btn btn-primary w-100 mt-1">Add To Card</button>
                  </div>
                </div>
               </div>
+                
             <?php
               }
             ?>

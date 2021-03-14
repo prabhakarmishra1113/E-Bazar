@@ -1,4 +1,5 @@
-
+<?php include "src/db_con.php" ?>
+<?php session_start(); ?>
 <!--Include Header Files-->
 <?php include "templates/includes/header.php" ?>
 
@@ -40,7 +41,7 @@
         <a href="#" class="float-right"><button class="btn btn-primary">View All</button></a>
         Deals Of The Day
      </div>
-      <?php include "templates/includes/owlcarousel.php" ?>
+      <?php $owlpath="";$page_link="products_page.php"; $product_col="product_cat"; include "templates/includes/owlcarousel.php" ?>
   </div>
 </section>
 <!--Owl Carousel Section End-->
@@ -79,3 +80,7 @@
 
 <!--Footer Include-->
 <?php include "templates/includes/footer.php" ?>
+<?php 
+unset($_SESSION['loginmsg']);
+unset($_SESSION['signmsg']);
+?>
