@@ -257,6 +257,8 @@ header .nav-link {
 /* website footer start*/
  #foot 
 {
+    	        /* website footer start*/
+        #foot {
         	line-height:2; margin-top:25px;
         	font-family: 'oswald', san-serif;
         	letter-spacing: 2px;
@@ -277,3 +279,17 @@ header .nav-link {
         	color:white;
 }
 /* website footer end*/
+        }
+
+        #foot .row ul{
+        	list-style-type: none;
+        }
+
+        #foot .row ul li h3,h5{
+        	color:#000;
+        }
+
+        #foot .row ul li a{
+        	color:white;
+        }
+        /* website footer end*/
