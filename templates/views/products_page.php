@@ -50,7 +50,7 @@
                    <a href="product_detail.php?product_key=<?php echo $row['product_id']; ?>"><figcaption class="figure-caption title text-truncate"><?php echo $row['product_name']; ?></figcaption></a>
                    <figcaption class="figure-caption color text-truncate"><?php echo $row['product_color'] ?></figcaption>
                    <figcaption class="figure-caption rs">₹<?php $x=$row['product_price'];$y=$row['product_discount']; $money=($x-($x*$y)/100); echo $money; ?> <del>₹<?php echo $row['product_price']; ?></del> <span class="text-success"><?php echo $row['product_discount']; ?>% off</span></figcaption>
-                   <button class="btn btn-primary w-100 mt-1">Add To Card</button>
+                   <a href="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id']; ?>"><button class="btn btn-primary w-100 mt-1">Add To Card</button>
                  </div>
                </div>
               </div>

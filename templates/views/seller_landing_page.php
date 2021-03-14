@@ -167,9 +167,5 @@
     </div>
   </div>
   <!-- modal end for seller info update ends-->
-  
-<<<<<<< HEAD
 <?php include "../includes/footer.php" ?>
-=======
-<?php include "../includes/footer.php" ?>
->>>>>>> 85ff0efeff1ffa45da56cd4751e791b6fb94893f
+

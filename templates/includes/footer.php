@@ -53,7 +53,6 @@
      	<p>&copy All right reserves with E-bazar</p>
      </div>
 </section>
-<<<<<<< HEAD
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="public/js/style.js"></script>
@@ -63,5 +62,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-=======
->>>>>>> 85ff0efeff1ffa45da56cd4751e791b6fb94893f

@@ -30,13 +30,18 @@
         {
           $query="INSERT INTO users(user_name,user_phone,user_email,user_pass) VALUES(?,?,?,?)";
           $result=$con->prepare($query);
-          $result->execute(array($username,$useremail,$userphone,$userpassword));
+          $result->execute(array($username,$userphone,$useremail,$userpassword));
 
           if($result)
           {
+            $query="SELECT user_id FROM users WHERE user_email='$useremail'";
+            $result=$con->prepare($query);
+            $result->execute();
+            $row=$result->fetch(PDO::FETCH_ASSOC);
+             $_SESSION['user_id']=$row['user_id'];
+             $_SESSION['user_name']=$username;
+             $_SESSION['user_email']=$email;
              header("location: ../../index.php");
-             $_SESSION['username']=$username;
-             $_SESSION['email']=$email;
           }
           else
           {
@@ -72,7 +77,7 @@ if(isset($_REQUEST['login']))
        {
          $_SESSION['user_name']=$row['user_name'];
          $_SESSION['user_id']=$row['user_id'];
-         $_SESSION['email']=$row['user_email'];
+         $_SESSION['user_email']=$row['user_email'];
          header("location: ../../index.php");
        }
     }
