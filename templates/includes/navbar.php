@@ -18,9 +18,14 @@
     <!--Icon and Logo Section End-->
 
     <!--SignIn/SignUp and Cart Section Start-->
-        <ul class="nav ml-auto order-sm-last mr-lg-5 rc">
+      <ul class="nav ml-auto order-sm-last mr-lg-5 rc">
         <?php 
            if(isset($_SESSION['user_id'])){
+              $user_id=$_SESSION['user_id'];
+              $query="SELECT product_id FROM cart WHERE user_id='$user_id'";
+              $result=$con->prepare($query);
+              $result->execute();
+              $cart_count=$result->rowCount();
              ?>
           
                <li class="nav-item dropleft">
@@ -33,9 +38,7 @@
                  <div class="dropdown-divider"></div>
                  <a class="dropdown-item" href="<?php echo $path; ?>src/server/user_logout.php">Logout</a>
                </div>
-               </li>
-             
-            
+               </li>   
         <?php
            }
            else{
@@ -47,7 +50,7 @@
            } 
         ?>    
             <li class="nav-item">
-               <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i> <span class="lc">Cart</span></a>
+               <a class="nav-link" href="<?php echo $path ?>templates/views/user_cart.php"><i class="fa fa-shopping-cart"></i> <span class="lc">Cart<sup class="text-danger"><sup style="font-size:10px;"><?php if(isset($cart_count)){echo $cart_count;} ?></sup></a>
             </li>
          </ul>
     <!--SignIn/SignUp and Cart Section End-->
@@ -93,7 +96,7 @@
 
       <div class="modal-body justify-content-right">
         <div class="text-center pt-5 pb-5">
-          <form  action="src/server/user_signup_login.php" method="POST">
+          <form  action="<?php echo $path ?>src/server/user_signup_login.php" method="POST">
              <div class="form-group">
               <input type="text" name="userlogin" class="form-control" placeholder="Email Or Phone">
             </div>
@@ -129,7 +132,7 @@
 
       <div class="modal-body justify-content-right">
         <div class="text-center pt-5 pb-5">
-          <form  action="src/server/user_signup_login.php" method="POST">
+          <form  action="<?php echo $path ?>src/server/user_signup_login.php" method="POST">
 
             <div class="form-group">
               <input type="text" name="username" class="form-control" placeholder="Name">
