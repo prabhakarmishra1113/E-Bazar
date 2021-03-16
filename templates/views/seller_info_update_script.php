@@ -24,7 +24,7 @@ $id=$_SESSION['seller_id'];
   $pin = $_POST['pin'];
   $pin = mysqli_real_escape_string($con, $pin);
 
-  $query = "UPDATE  sellers SET shop_name ='$name', owner='$owner',seller_phone='$contact', selelr_address='$address',seller_city='$city',seller_state='$state',seller_pincode='$pin' WHERE seller_id = '$id'";
+  $query = "UPDATE  sellers SET shop_name ='$name', owner='$owner',seller_phone='$contact', seller_address='$address',seller_city='$city',seller_state='$state',seller_pincode='$pin' WHERE seller_id = '$id'";
    mysqli_query($con, $query) or die($mysqli_error($con));
 echo "<script type='text/javascript'>alert('seller information updated Successfully');window.location.href='./seller_landing_page.php';</script>";
    ?>
