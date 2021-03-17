@@ -13,14 +13,13 @@
        if($num>0)
        {
       ?>   
- <section class="user_cart">
+ <section class="user_cart mb-4">
    <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-            <div class="card mb-3">
+            <div class="card">
                <div class="card-header">My Cart</div>
-               <div class="card-body">
-                 <?php
+               <?php
                    while($row=$result->fetch(PDO::FETCH_ASSOC)){
                       $_SESSION['cart_item']=$num;
                       $product_id=$row['product_id'];
@@ -31,20 +30,23 @@
                       $tempimg = $row1['product_images'];
                       $img = explode(",",$tempimg);
                  ?>
-                 <div class="row">
-                     <div class="col-2">
+                  <hr>
+                  <div class="row d-flex justify-content-start" style="margin: 0;">
+                     <div class="col-4 col-md-3 col-lg-2 text-center">
                        <img src="../../public/images/products/<?php echo $img['0'] ?>" alt="...">           
                      </div>
-                     <div class="col-10">
+                     <div class="col-8 col-md-9 col-lg-10">
                        <h5 class="card-title"><?php echo $row1['product_name'];?>"</h5>
+                       <h6 class="text-muted product-size">Size: L</h6>
+                       <h6 class="text-muted product-seller">Seller: Anand</h6> 
+                       <h5><span class="product-price">₹402</span> <del class="text-muted">499</del> <span class="text-success font-weight-bold">19% off</span></h5> 
+                       <a href="../../src/server/remove_item.php?product_key=<?php echo $row['product_id'];  ?>"><h5 class="remove">REMOVE</h5></a>
                      </div>
-                 </div>
+                  </div>
                  <?php
                   }
-                 ?>
-                 <hr><br>
-                 
-               </div>
+                 ?>    
+               <hr>
                <div class="card-footer">
                   <a href="#"><button class="btn btn-lg btn-danger float-right">PLACE ORDER</button></a>
                </div>

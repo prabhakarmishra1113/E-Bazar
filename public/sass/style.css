@@ -364,8 +364,43 @@ header .nav-link {
   float: left;
 }
 
-.user_cart .card .card-body img {
-  height: 10rem;
-  width: 8rem;
+.user_cart .card .card-header {
+  border: none;
+  background: #ffffff;
+}
+
+.user_cart .card .row img {
+  height: 8rem;
+  width: 6rem;
+}
+
+.user_cart .card .row .card-title {
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.user_cart .card .row .product-price {
+  font-weight: bold;
+  color: black;
+}
+
+.user_cart .card .row a {
+  text-decoration: none;
+}
+
+.user_cart .card .row a .remove {
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  color: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user_cart .card .row a:hover .remove {
+  color: blue;
+}
+
+.user_cart .card-footer {
+  border: none;
+  background: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
