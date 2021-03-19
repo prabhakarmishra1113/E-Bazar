@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'oswald', san-serif;
 }
 
 body {
@@ -246,6 +246,7 @@ header .nav-link {
   text-decoration: none;
 }
 
+
 .product_page .product_sec .card-header {
   font-size: 1rem;
   font-weight: bold;
@@ -320,21 +321,20 @@ header .nav-link {
   width: 85vw;
 }
 
-.product_details .card .btn-group button {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-@media screen and (max-width: 576px) {
-  .product_details .card .btn-group button {
-    font-size: .7rem;
-  }
-}
-
 .product_details .card .card-footer {
   border: none;
   background: none;
+}
+
+.product_details .card .card-footer .btn-group a {
+  width: 100% !important;
+  text-decoration: none !important;
+}
+
+.product_details .card .card-footer .btn-group button {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .product_details .product-details-part .product-title {
@@ -364,6 +364,43 @@ header .nav-link {
   float: left;
 }
 
+.product_details .product-details-part .product-size a {
+  height: 30px;
+  width: 50px;
+  margin-left: 1rem;
+  color: #000000;
+  font-weight: bold;
+  background: #ffffff;
+  float: left;
+  text-align: center !important;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
+
+   	        /* website footer start*/
+   	        .footer
+   	        {
+   	            margin-top:65px;
+   	        }
+        #foot {
+        	line-height:2; margin-top:30px;
+        	font-family: 'oswald', san-serif;
+        	letter-spacing: 1px;
+        	font-weight: 500;
+        }
+
+        #foot .row ul{
+        	list-style-type: none;
+        }
+
+        #foot .row ul li h3,h5{
+        	color:#000;
+        }
+
+        #foot .row ul li a{
+        	color:white;
+        }
+        /* website footer end*/
 .user_cart .card .card-header {
   border: none;
   background: #ffffff;
@@ -402,29 +439,4 @@ header .nav-link {
 .user_cart .card-footer {
   border: none;
   background: #ffffff;
-}
-/* website footer start*/
-   	        .footer
-   	        {
-   	            margin-top:65px;
-   	        }
-        #foot {
-        	line-height:2; margin-top:30px;
-        	font-family: 'oswald', san-serif;
-        	letter-spacing: 1px;
-        	font-weight: 500;
-        }
-
-        #foot .row ul{
-        	list-style-type: none;
-        }
-
-        #foot .row ul li h3,h5{
-        	color:#000;
-        }
-
-        #foot .row ul li a{
-        	color:white;
-        }
-        /* website footer end*/
-/*# sourceMappingURL=style.css.map */
+}      

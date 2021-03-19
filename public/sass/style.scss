@@ -143,7 +143,8 @@ header{
             height: 25vh !important;
         }
     }
-   }   
+   }
+    
 }
 
 .card-header{
@@ -367,44 +368,4 @@ header{
             }
         }
     }
-}
-.user_cart{
-    .card{
-        .card-header{
-            border: none;
-            background: #ffffff;
-        }
-        .row{
-            img{
-                height: 8rem;
-                width: 6rem;
-            }
-            .card-title{
-                font-weight: bold;
-                font-family:'Times New Roman', Times, serif;
-            }
-            .product-price{
-                font-weight: bold;
-                color: black;
-            }
-            a{
-                text-decoration: none;
-                .remove{
-                    font-weight: bold !important;
-                    font-size: 1rem !important;
-                    color: #000000;
-                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-            }
-            a:hover{
-                .remove{
-                    color:blue;
-                }
-            }
-        }
-    }
-     .card-footer{
-        border: none;
-        background: #ffffff;
-     }
 }

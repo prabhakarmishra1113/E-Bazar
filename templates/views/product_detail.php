@@ -65,8 +65,8 @@
            <!--Carousel End-->
            <div class="card-footer">
              <div class="btn-group w-100">
-               <a href="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id']; ?>"><button type="button" class="btn btn-lg btn-success "><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button></a>
-               <a><button type="button" class="btn btn-lg btn-danger  ml-1"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button></a>
+               <a href="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id']; ?>"><button type="button" class="btn btn-lg btn-success w-100"><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button></a>
+               <a><button type="button" class="btn btn-lg btn-danger  ml-1 w-100"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button></a>
              </div>
            </div>
 
@@ -74,11 +74,9 @@
       </div>
     <!--Product Images Part End-->  
 
-    
-
     <!--Product Details Part Start--> 
       <div class="col-md-12 col-lg-7 product-details-part">
-          <div class="card">
+          <div class="card d-flex justify-content-start">
              <div class="card-body">
                <h5 class="text-muted product-seller">Anand</h5> 
                <h4 class="product-title"><?php echo $row['product_name']; ?></h4>
@@ -96,9 +94,22 @@
                      }
                    ?>
                 </h5>
+
+                <h5 class="product-size mb-5">
+                   <span class="float-left">Size</span>
+                   <?php
+                     $tempsize = $row['product_size'];
+                     $size = explode(",",$tempsize);
+                     for($i=0;$i<sizeof($size);$i++){
+                   ?> 
+                    <div><?php echo $size[$i]; ?></div>
+                   <?php
+                     }
+                   ?>
+                </h5><br>
                
-               <hr class="mt-3">
-               <div class="product-more" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Poduct Details <span><i class="fa fa-plus float-right text-muted"></i></span></div>
+               <hr>
+               <div class="product-more mt-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Poduct Details <span><i class="fa fa-plus float-right text-muted"></i></span></div>
                <div class="collapse" id="collapseExample">
                   <div class="card card-body" style="border: none;">
                      <?php echo $row['product_details']; ?>
