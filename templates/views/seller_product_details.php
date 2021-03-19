@@ -67,8 +67,8 @@ session_start(); ?>
            <!--Carousel End-->
            <div class="card-footer">
              <div class="btn-group w-100">
-               <button type="button" class="btn btn-lg btn-success "><i class="fa fa-edit"></i> <span>EDIT PRODUCT DETAILS</span></button>
-               <button type="button" class="btn btn-lg btn-danger  ml-1"><i class="fa fa-trash"></i> <span>REMOVE PRODUCT</span></button>
+               <button type="button" class="btn btn-lg btn-success "><a href="seller_product_details_edit.php?id=<?php echo $product_id;?>"><i class="fa fa-edit text-light"></i> <span class="text-light">EDIT PRODUCT DETAILS</span></a></button>
+               <button type="button" class="btn btn-lg btn-danger  ml-1"><a href="seller_product_delete_confirmation_script.php?id=<?php echo $product_id;?>"><i class="fa fa-trash text-light"></i> <span class="text-light">REMOVE PRODUCT</span></a></button>
              </div>
            </div>
 
