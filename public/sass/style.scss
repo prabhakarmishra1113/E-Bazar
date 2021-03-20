@@ -369,3 +369,37 @@ header{
         }
     }
 }
+.buy_product{
+    .login_part{
+        .card-header{
+            height: 80px;
+        }
+        h6{
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .name{
+            font-size: 17px;
+            color: #000000;
+            font-weight: bold;
+        }
+        .number{
+            font-size: 17px;
+        }
+    }
+    .address_part{
+        .button{
+            font-size: 14px !important;
+        }
+    }
+    .summery_part{
+       .card-header{
+           height: 50px;
+       }
+    }
+    .payment_part{
+        .card-header{
+            height: 50px;
+        }
+    }
+}
