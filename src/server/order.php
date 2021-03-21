@@ -32,7 +32,7 @@ if(isset($_SESSION['user_id'])){
             else
             {
               header("location: ../../templates/views/buy_product.php");
-              $_SESSION['address_msg']="Server Error";
+              $_SESSION['address_msg']="Server Error Find";
             }
         }
     }

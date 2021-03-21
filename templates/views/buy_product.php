@@ -3,6 +3,9 @@
 
 <?php  $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
+<?php if(isset($_SESSION['user_id'])){ 
+  
+?>
 <section class="buy_product">
  <div class="container">
    <div class="row">
@@ -16,21 +19,72 @@
         </div>
        </div>
 
-       <div class="address_part card mb-3">
-       
-        <div class="card-body">
-          <form>
-            <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="radio" name="address_type" id="inlineRadio2" value="Work">
-                 <label class="form-check-label" for="inlineRadio2">Work (10 Delivery between  10 AM - 5 PM)</label>
-            </div>
-          </form>
-        </div>
+    <div class="card bg-white mb-3">
+      <div class="card-header bg-white">
+        <h6 class="text-muted">DELIVERY ADDRESS</h6>
+      </div>  
+      <div class="card-body" id="already_saved">
+         <form>
+            <div class="form-group ml-3">
+                <?php
+                  $user_id=$_SESSION['user_id'];
+                  $query="SELECT * FROM user_address WHERE user_id='$user_id'";
+                  $result=$con->prepare($query);
+                  $result->execute();
+                  $num=$result->rowCount();
+                  if($num>0){
+                    $i=1;
+                    while($row=$result->fetch(PDO::FETCH_ASSOC))
+                     {
+                ?>
 
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    $("#save_address<?php echo $i; ?>").click(function(){
+                       $("#db<?php echo $i; ?>").toggle();
+                    });
+                  });
+                </script>
+
+                <div class="form-check form-check">
+                 <input class="form-check-input" type="radio" name="save_address" id="save_address<?php echo $i; ?>" value="Home">
+                 <address class="form-check-label" for="save_address">
+                   <span><?php echo $row['buyer_name'] ?></span> <span><?php echo $row['address_type'] ?></span> <span><?php echo $row['buyer_number'] ?></span><br>
+                   <span><?php echo $row['buyer_locality']."," ?></span> <span><?php echo $row['buyer_address']."," ?></span> <span><?php echo $row['buyer_town']."," ?></span> <span><?php echo $row['buyer_state']." -" ?></span> <span><?php echo $row['buyer_pin'] ?></span>
+                 </address>
+                 <button class="btn btn-danger mt-2" id="db<?php echo $i; ?>" style="display: none;">DELIVER HERE</button>      
+                </div><hr>
+              <?php
+              $i++;
+               }
+            ?>
+            <script>
+             $(document).ready(function(){
+                   $("#address_form").hide();
+                });
+            </script>
+            <?php   
+              }
+              else{
+                ?>
+              <script>
+                $(document).ready(function(){
+                   $("#already_saved").hide();
+                });
+              </script>
+            <?php    
+              }
+              ?>  
+          </div> 
+        </form>
+      </div>
+    </div>
+
+       <div class="address_part card mb-3">
          <div class="card-body">
             <h5><?php if(isset($_SESSION['address_msg'])){echo $_SESSION['address_msg'];} ?></h5>    
-            <h6 class="card-title text-primary font-weight-bold">Add New Address</h6>
-          <form action="../../src/server/order.php">
+            <h6 class="card-title text-primary font-weight-bold" id="add_new_address" style="cursor: pointer;">Add New Address</h6>
+         <form action="../../src/server/order.php" id="address_form">
            <div class="form-row"> 
              <div class="form-group col-md-6">
                  <input type="text" class="form-control" name="order_name" placeholder="Name">
@@ -101,6 +155,19 @@
    </div>
  </div>
 </section>
+<?php
+}
+else{
+  echo "<h1>Sorry! First Login </h1>";
+}
+?>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#add_new_address").click(function(){
+            $("#address_form").show();
+        });
+    });
+</script>
 
 <?php include "../includes/footer.php" ?>
 <?php unset($_SESSION['address_msg']) ?>
