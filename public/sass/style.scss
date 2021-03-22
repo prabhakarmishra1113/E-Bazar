@@ -6,6 +6,13 @@
 body{
     background:whitesmoke;
 }
+.active{
+    background-color: coral !important;
+    .card-title{
+        color: #000000;
+        font-weight: bold;
+    }
+}
 @media screen and (max-width: 576px){
     .container-fluid{
         padding-right: 0px !important;
@@ -295,6 +302,7 @@ header{
         
     }
 }
+
 .product_details{
     .card{
         border: none;
@@ -323,7 +331,14 @@ header{
                 }
             }
         }
-        .btn-group{
+      .card-footer{
+          border: none;
+          background: none;
+          .btn-group{
+              a{
+                width: 100% !important;
+                text-decoration: none !important; 
+              }
             button{
                 color: #ffffff;
                 font-weight: bold;
@@ -335,9 +350,6 @@ header{
                 }
             }
         }
-      .card-footer{
-          border: none;
-          background: none;
       }  
     }
     .product-details-part{
@@ -367,9 +379,62 @@ header{
                 float: left;
             }
         }
+        .product-size{
+            a{
+                height: 30px;
+                width: 50px;
+                margin-left: 1rem;
+                color: #000000;
+                font-weight: bold;
+                background: #ffffff;
+                float: left;
+                text-align: center !important;
+                cursor: pointer;              
+            }
+        }
     }
 }
-.buy_product{
+.user_cart{
+    .card{
+        img{
+            width: 5rem;
+            height:8rem;
+        }
+        .card-header{
+            border: none;
+            background: #ffffff;
+        }
+        .row{
+            .card-title{
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;            
+            }
+            .product-price{
+                font-weight: bold;
+                color: black;            
+            }
+            a{
+                text-decoration: none;  
+                .remove{
+                    font-weight: bold !important;
+                    font-size: 1rem !important;
+                    color: #000000;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;               
+                }         
+            }
+            a:hover{
+                .remove{
+                    color: blue;           
+                }
+            }
+        }
+    }
+    .card-footer{
+        border: none;
+        background: #ffffff;     
+    }
+}
+.payment_page{
     .login_part{
         .card-header{
             height: 80px;
@@ -385,6 +450,20 @@ header{
         }
         .number{
             font-size: 17px;
+        }
+    }
+    .saved_address{
+        .form-group{
+            .buyer_name,.buyer_pin,.buyer_number{
+                font-weight: bold;
+                color: #000000;
+            }
+            .address_type{
+                background: #ffffff;
+                color: black;
+                border: 1px solid grey;
+                padding: 2px;
+            }
         }
     }
     .address_part{
@@ -403,3 +482,31 @@ header{
         }
     }
 }
+
+
+/*# sourceMappingURL=style.css.map */
+
+   	        /* website footer start*/
+   	        .footer
+   	        {
+   	            margin-top:65px;
+   	        }
+        #foot {
+        	line-height:2; margin-top:30px;
+        	font-family: 'oswald', san-serif;
+        	letter-spacing: 1px;
+        	font-weight: 500;
+        }
+
+        #foot .row ul{
+        	list-style-type: none;
+        }
+
+        #foot .row ul li h3,h5{
+        	color:#000;
+        }
+
+        #foot .row ul li a{
+        	color:white;
+        }
+        /* website footer end*/

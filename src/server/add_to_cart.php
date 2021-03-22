@@ -12,21 +12,34 @@
        $num=$result->rowCount();
        if($num>0)
        {
-         header("location: ../../index.php");
-         $_SESSION['cartmsg']="Product Alredy Added To Cart";
+         if(isset($_REQUEST['buy_now'])){
+            $_SESSION['product_id']=$_REQUEST['product_key'];
+            $_SESSION['buy_now']="buy_now";
+            header("location:../../templates/views/buy_product.php");
+         } 
+         else{
+            header("location: ../../index.php");
+            $_SESSION['cartmsg']="Product Alredy Added To Cart";
+         }
        }
        else{
          $query="INSERT INTO cart(user_id,product_id) VALUES(?,?)";
          $result=$con->prepare($query);
          $result->execute(array($user_id,$product_id));
          if($result){
-            $_SESSION['product_id']=$_REQUEST['product_key'];
-            header("location:../../templates/views/user_cart.php");
+            if(isset($_REQUEST['add_to_cart'])){
+               $_SESSION['product_id']=$_REQUEST['product_key'];
+               header("location:../../templates/views/user_cart.php");
+            }
+            if(isset($_REQUEST['buy_now'])){
+               $_SESSION['product_id']=$_REQUEST['product_key'];
+               $_SESSION['buy_now']="buy_now";
+               header("location:../../templates/views/buy_product.php");
+            }
          }
        }
     }
  else{
     header("location:../../index.php");
  }
-
 ?>

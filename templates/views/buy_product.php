@@ -4,27 +4,29 @@
 <?php  $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
 <?php if(isset($_SESSION['user_id'])){ 
-  
 ?>
-<section class="buy_product">
+<section class="payment_page">
  <div class="container">
    <div class="row">
 
      <div class="col-sm-8">
 
+<!--Card 1 Login Details START-->   
       <div class="card bg-white login_part mb-3">
         <div class="card-header bg-white">
           <h6 class="text-muted">LOGIN</h6>
           <p><span class="name"><?php echo $_SESSION['user_name']; ?></span>  <span class="text-muted number">+918360886874</span></p>
         </div>
        </div>
+<!--Card 1 Login Details END-->       
 
-    <div class="card bg-white mb-3">
-      <div class="card-header bg-white">
-        <h6 class="text-muted">DELIVERY ADDRESS</h6>
+<!--Card 2 Already Saved Address Part Start--> 
+    <div class="card bg-white mb-3 saved_address">
+      <div class="card-header bg-white" id="sa">
+        <h6 class="card-title">DELIVERY ADDRESS</h6>
       </div>  
       <div class="card-body" id="already_saved">
-         <form>
+         <form action="../../src/server/order_detail.php" method="post">
             <div class="form-group ml-3">
                 <?php
                   $user_id=$_SESSION['user_id'];
@@ -47,12 +49,12 @@
                 </script>
 
                 <div class="form-check form-check">
-                 <input class="form-check-input" type="radio" name="save_address" id="save_address<?php echo $i; ?>" value="Home">
+                 <input class="form-check-input" type="radio" name="save_address" id="save_address<?php echo $i; ?>" value="<?php echo $row['address_id'] ?>" <?php if(isset($_SESSION['checked_id']) && ($_SESSION['checked_id']==$row['address_id'])){ echo $_SESSION['checked']; } ?>>
                  <address class="form-check-label" for="save_address">
-                   <span><?php echo $row['buyer_name'] ?></span> <span><?php echo $row['address_type'] ?></span> <span><?php echo $row['buyer_number'] ?></span><br>
-                   <span><?php echo $row['buyer_locality']."," ?></span> <span><?php echo $row['buyer_address']."," ?></span> <span><?php echo $row['buyer_town']."," ?></span> <span><?php echo $row['buyer_state']." -" ?></span> <span><?php echo $row['buyer_pin'] ?></span>
+                   <span class="buyer_name"><?php echo $row['buyer_name'] ?></span> <span class="address_type"><?php echo $row['address_type'] ?></span> <span class="buyer_number text-success"><?php echo $row['buyer_number'] ?></span><br>
+                   <span><?php echo $row['buyer_locality']."," ?></span> <span><?php echo $row['buyer_address']."," ?></span> <span><?php echo $row['buyer_town']."," ?></span> <span><?php echo $row['buyer_state']." -" ?></span> <span class="buyer_pin"><?php echo $row['buyer_pin'] ?></span>
                  </address>
-                 <button class="btn btn-danger mt-2" id="db<?php echo $i; ?>" style="display: none;">DELIVER HERE</button>      
+                 <button class="btn btn-danger mt-2" id="db<?php echo $i; ?>" style="display: none;" type="submit" name="delivery_here">DELIVER HERE</button>      
                 </div><hr>
               <?php
               $i++;
@@ -79,7 +81,9 @@
         </form>
       </div>
     </div>
+<!--Card 2 Already Saved Address Part END--> 
 
+<!--Card 3 Add New Address Part Start--> 
        <div class="address_part card mb-3">
          <div class="card-body">
             <h5><?php if(isset($_SESSION['address_msg'])){echo $_SESSION['address_msg'];} ?></h5>    
@@ -125,22 +129,90 @@
          </form>
         </div> 
     </div>
+<!--Card 3 Add New Address Part End--> 
 
-    <div class="card summery_part mb-3">
-       <div class="card-header">
-         <h5 class="card-title text-muted">ORDER SUMMARY</h5>
+<!--Card 4 Order Summary Part Start--> 
+    <div class="card summery_part mb-3 user_cart">
+      <div class="card-header" id="order_summary">
+         <h5 class="card-title">ORDER SUMMARY</h5>
        </div>
-    </div>
+      <?php
+        if(isset($_SESSION['checked_id'])){      
+      ?>
+      <div class="card">
+      <div class="card-body">
+       <?php
+         if(isset($_SESSION['product_id'])){
+              $product_id=$_SESSION['product_id'];
+              $query="SELECT * FROM products WHERE product_id='$product_id'";
+              $result1=$con->prepare($query);
+              $result1->execute();
+              $row1=$result1->fetch(PDO::FETCH_ASSOC);
+              $tempimg = $row1['product_images'];
+              $img = explode(",",$tempimg);
+        ?>
+        <div class="row d-flex justify-content-start" style="margin: 0;">
+          <div class="col-4 col-md-3 col-lg-2 text-center">
+              <img src="../../public/images/products/<?php echo $img['0'] ?>" alt="...">           
+          </div>
+          <div class="col-8 col-md-9 col-lg-10">
+              <h5 class="card-title"><?php echo $row1['product_name'];?>"</h5>
+              <h6 class="text-muted product-size">Size: L</h6>
+              <h6 class="text-muted product-seller">Seller: Anand</h6> 
+              <h5><span class="product-price">₹402</span> <del class="text-muted">499</del> <span class="text-success font-weight-bold">19% off</span></h5> 
+          </div>
+        </div>
+        <?php
+         }
+       ?>    
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-danger float-right" id="pay_order_now">PAY & ORDER NOW</button>
+      </div>
+  </div>
+  <?php
+     }
+   ?>
+</div>
+<!--Card 4 Order Summary Part End-->     
+    <script>
+       $(document).ready(function(){
+          $("#payment_sheet").hide();
+          $("#pay_order_now").click(function(){
+            $("#payment_sheet").show();
+          });
+       });
+    </script>
 
+<!--Card 5 Payment Options Part Start--> 
     <div class="card payment_part mb-3">
       <div class="card-header">
          <h5 class="card-title text-muted">PAYMENT OPTIONS</h5>
        </div>
+       <div class="card-body" id="payment_sheet">
+         <script>
+            $(document).ready(function(){
+               $("#confirm").hide();
+               $("#cash_on_delivery").click(function(){
+                   $("#confirm").show();
+               });
+            });
+         </script>
+           <form action="../../src/server/order_detail.php" method="post">
+              <div class="form-group">
+                 <div class="form-check form-check">
+                   <input class="form-check-input collapsed" type="radio" name="payment_method" id="cash_on_delivery" value="Cash On Delivery">
+                   <label class="form-check-label" for="inlineRadio2">Cash On Delivery</label>
+                 </div>
+                 <button type="submit" name="confirm" class="btn btn-lg btn-danger float-right" style="font-size: 14px;" id="confirm">CONFIRM</button>
+              </div>  
+           </form>
+       </div>
     </div>
-
-  </div>
-
-     <div class="col-sm-4">
+<!--Card 5 Payment Options Part End--> 
+</div>
+<!--1st Column END--> 
+<div class="col-sm-4">
         <div class="card">
            <div class="card-header">
              <h6 class="card-title text-muted">PRICE DETAILS</h6>
@@ -152,6 +224,7 @@
            </div>
         </div>
      </div>
+     
    </div>
  </div>
 </section>

@@ -20,7 +20,7 @@
             <div class="card">
                <div class="card-header">My Cart</div>
                <?php
-                   while($row=$result->fetch(PDO::FETCH_ASSOC)){
+                      while($row=$result->fetch(PDO::FETCH_ASSOC)){
                       $_SESSION['cart_item']=$num;
                       $product_id=$row['product_id'];
                       $query="SELECT * FROM products WHERE product_id='$product_id'";

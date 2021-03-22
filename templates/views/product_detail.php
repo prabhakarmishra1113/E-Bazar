@@ -65,8 +65,10 @@
            <!--Carousel End-->
            <div class="card-footer">
              <div class="btn-group w-100">
-               <a href="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id']; ?>"><button type="button" class="btn btn-lg btn-success w-100"><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button></a>
-               <a href="buy_product.php?product_key=<?php echo $row['product_id']; ?>"><button type="button" class="btn btn-lg btn-danger  ml-1 w-100"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button></a>
+               <form action="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id'];?>" method="post" class="w-100">
+                 <a href="#"><button type="submit" class="btn btn-lg btn-success" name="add_to_cart"><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button></a>
+                 <a href="#"><button type="submit" class="btn btn-lg btn-danger" name="buy_now"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button></a>
+               </form>
              </div>
            </div>
 
