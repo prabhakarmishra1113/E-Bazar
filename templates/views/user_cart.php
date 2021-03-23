@@ -4,7 +4,7 @@
 <?php  $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
 <?php
-  if(isset($_SESSION['user_id'])){
+   if(isset($_SESSION['user_id'])){
        $user_id=$_SESSION['user_id'];
        $query="SELECT product_id FROM cart WHERE user_id='$user_id'";
        $result=$con->prepare($query);
@@ -17,6 +17,7 @@
    <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
+         <form action="buy_product.php" method="post">
             <div class="card">
                <div class="card-header">My Cart</div>
                <?php
@@ -48,10 +49,10 @@
                  ?>    
                <hr>
                <div class="card-footer">
-                  <a href="#"><button class="btn btn-lg btn-danger float-right">PLACE ORDER</button></a>
+                  <a href="#"><button type="submit" name="place_order" class="btn btn-lg btn-danger float-right">PLACE ORDER</button></a>
                </div>
             </div>
-
+          </form>
         </div>
 
         <div class="col-md-4">

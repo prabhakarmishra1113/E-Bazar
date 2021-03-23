@@ -63,14 +63,18 @@
            </div>
          </div>
            <!--Carousel End-->
-           <div class="card-footer">
-             <div class="btn-group w-100">
-               <form action="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id'];?>" method="post" class="w-100">
-                 <a href="#"><button type="submit" class="btn btn-lg btn-success" name="add_to_cart"><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button></a>
-                 <a href="#"><button type="submit" class="btn btn-lg btn-danger" name="buy_now"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button></a>
-               </form>
-             </div>
-           </div>
+          <div class="card-footer">
+            <form action="../../src/server/add_to_cart.php?product_key=<?php echo $row['product_id'];?>" method="post">
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <button type="submit" class="btn btn-lg btn-success w-100" name="add_to_cart"><i class="fa fa-shopping-cart"></i> <span>ADD TO CARD</span></button>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <button type="submit" class="btn btn-lg btn-danger w-100" name="buy_now"><i class="fa fa-bolt"></i> <span>BUY NOW</span></button>
+                </div>
+              </div>                                
+            </form>
+          </div>
 
          </div>
       </div>

@@ -2,6 +2,10 @@
 <?php session_start(); ?>
 <?php include "../includes/header.php" ?>
 
+<?php
+if(isset($_SESSION['user_id'])){
+?> 
+
 <?php $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
 <section>
@@ -15,6 +19,11 @@
  </div>
 </section>
 
-
-
 <?php include "../includes/footer.php" ?>
+
+<?php
+}
+else{
+   header("location:../../index.php");
+}
+?>

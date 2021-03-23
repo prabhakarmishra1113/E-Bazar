@@ -3,7 +3,13 @@
 
 <?php  $index="../../index.php"; $path="../../"; include "../includes/navbar.php" ?>
 
-<?php if(isset($_SESSION['user_id'])){ 
+<?php if(isset($_SESSION['user_id'])){
+  if(isset($_REQUEST['place_order'])){
+    $_SESSION['place_order']="place_order";
+  } 
+  if(isset($_REQUEST['buy_now'])){
+    $_SESSION['buy_now']="buy_now";
+  }
 ?>
 <section class="payment_page">
  <div class="container">
@@ -137,12 +143,12 @@
          <h5 class="card-title">ORDER SUMMARY</h5>
        </div>
       <?php
-        if(isset($_SESSION['checked_id'])){      
+        if(isset($_SESSION['checked'])){
       ?>
       <div class="card">
       <div class="card-body">
        <?php
-         if(isset($_SESSION['product_id'])){
+          if(isset($_SESSION['buy_now']) && isset($_SESSION['product_id'])){
               $product_id=$_SESSION['product_id'];
               $query="SELECT * FROM products WHERE product_id='$product_id'";
               $result1=$con->prepare($query);
@@ -161,18 +167,57 @@
               <h6 class="text-muted product-seller">Seller: Anand</h6> 
               <h5><span class="product-price">₹402</span> <del class="text-muted">499</del> <span class="text-success font-weight-bold">19% off</span></h5> 
           </div>
-        </div>
-        <?php
-         }
-       ?>    
-      </div>
+        </div>   
+    <?php
+      }
+    ?>
+    </div>
+  
+  <?php 
+   if(isset($_SESSION['place_order'])){
+  ?>
+    <div class="card-body">
+       <?php
+          $user_id=$_SESSION['user_id'];
+          $query="SELECT product_id FROM cart WHERE user_id='$user_id'";
+          $result=$con->prepare($query);
+          $result->execute();
+          $num=$result->rowCount();
+          while($row=$result->fetch(PDO::FETCH_ASSOC)){
+            $product_id=$row['product_id'];
+            $query="SELECT * FROM products WHERE product_id='$product_id'";
+            $result1=$con->prepare($query);
+            $result1->execute();
+            $row1=$result1->fetch(PDO::FETCH_ASSOC);
+            $tempimg = $row1['product_images'];
+            $img = explode(",",$tempimg);
+        ?>
+        <div class="row d-flex justify-content-start" style="margin: 0;">
+          <div class="col-4 col-md-3 col-lg-2 text-center">
+              <img src="../../public/images/products/<?php echo $img['0'] ?>" alt="...">           
+          </div>
+          <div class="col-8 col-md-9 col-lg-10">
+              <h5 class="card-title"><?php echo $row1['product_name'];?>"</h5>
+              <h6 class="text-muted product-size">Size: L</h6>
+              <h6 class="text-muted product-seller">Seller: Anand</h6> 
+              <h5><span class="product-price">₹402</span> <del class="text-muted">499</del> <span class="text-success font-weight-bold">19% off</span></h5> 
+          </div>
+        </div>   
+    <?php
+      }
+    ?>
+    </div>
+    <?php
+     }
+    ?>
+
       <div class="card-footer">
         <button class="btn btn-danger float-right" id="pay_order_now">PAY & ORDER NOW</button>
       </div>
   </div>
   <?php
-     }
-   ?>
+  }
+  ?>
 </div>
 <!--Card 4 Order Summary Part End-->     
     <script>

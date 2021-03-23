@@ -8,11 +8,11 @@ body {
   background: whitesmoke;
 }
 
-.active {
+.myactive {
   background-color: coral !important;
 }
 
-.active .card-title {
+.myactive .card-title {
   color: #000000;
   font-weight: bold;
 }
@@ -334,20 +334,17 @@ header .nav-link {
   background: none;
 }
 
-.product_details .card .card-footer .btn-group a {
-  width: 100% !important;
-  text-decoration: none !important;
-}
-
-.product_details .card .card-footer .btn-group button {
+.product_details .card .card-footer button {
   color: #ffffff;
   font-weight: bold;
   font-size: 1rem;
+  display: inline !important;
 }
 
 @media screen and (max-width: 576px) {
-  .product_details .card .card-footer .btn-group button {
+  .product_details .card .card-footer button {
     font-size: .7rem;
+    margin-top: 5px;
   }
 }
 

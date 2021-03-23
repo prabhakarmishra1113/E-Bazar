@@ -27,14 +27,14 @@
          $result=$con->prepare($query);
          $result->execute(array($user_id,$product_id));
          if($result){
-            if(isset($_REQUEST['add_to_cart'])){
-               $_SESSION['product_id']=$_REQUEST['product_key'];
-               header("location:../../templates/views/user_cart.php");
-            }
             if(isset($_REQUEST['buy_now'])){
                $_SESSION['product_id']=$_REQUEST['product_key'];
                $_SESSION['buy_now']="buy_now";
                header("location:../../templates/views/buy_product.php");
+            }
+            else{
+               $_SESSION['product_id']=$_REQUEST['product_key'];
+               header("location:../../templates/views/user_cart.php");
             }
          }
        }
